@@ -78,7 +78,7 @@ int main(void){
                             break;
                         }
                         case 3:{
-                            printf("Atualizar Aluno\n");
+                            printf("Atualizar Aluno: incompleto\n");
                             break;
                         }
                         case 4:{
