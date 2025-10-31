@@ -10,10 +10,10 @@
 //  O aluno deve preencher seus dados abaixo, e implementar as questões do trabalho
 
 //  ----- Dados do Aluno -----
-//  Nome:
+//  Nome: Cristian Armentano Penas Seara
 //  email:
-//  Matrícula:
-//  Semestre:
+//  Matrícula: 20212160058
+//  Semestre: 5
 
 //  Copyright © 2016 Renato Novais. All rights reserved.
 // Última atualização: 07/05/2021 - 19/08/2016 - 17/10/2025
@@ -21,7 +21,7 @@
 // #################################################
 
 #include <stdio.h>
-#include "trabalho1.h" 
+#include "cristian20212160058.h" 
 #include <stdlib.h>
 
 DataQuebrada quebraData(char data[]);
