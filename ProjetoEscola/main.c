@@ -7,6 +7,16 @@ typedef struct aluno{
     int ativo;
 } Aluno;
 
+void menuDeOpcoes(){
+    printf("\n...Projeto Escola...\n");
+    printf("0 - sair\n");
+    printf("1 - Aluno\n");
+    printf("2 - Professor\n");
+    printf("3 - Disciplina\n");
+}
+
+
+
 int main(void){
     
     Aluno listaAluno[TAM_ALUNO];
@@ -15,13 +25,8 @@ int main(void){
     int sair = 0;
     
     while (!sair){
-        printf("\n...Projeto Escola...\n");
-        printf("0 - sair\n");
-        printf("1 - Aluno\n");
-        printf("2 - Professor\n");
-        printf("3 - Disciplina\n");
-           
-         scanf("%d", &opcao);
+        menuDeOpcoes();
+        scanf("%d", &opcao);
    
         switch (opcao){
             case 0:{
