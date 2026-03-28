@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define TAM_ALUNO 3
 
-    int main()
+int main()
 {
     int listaAluno[TAM_ALUNO];
     int opcao;
@@ -26,13 +26,13 @@
             int opcaoAluno;
             int sairAluno = 0;
 
-        while (!sair){
-            printf(" 0 - Voltar\n");
-            printf(" 1 - Casdaeter Aluno\n");
-            printf(" 2 - Listar Aluno\n");
-            printf(" 3 - Atualizar Aluno\n");
-            printf(" 4-  Escluir Aluno\n"); 
-            scanf(%d,&opcaoAluno);
+            while (!sair){
+                printf(" 0 - Voltar\n");
+                printf(" 1 - Casdaeter Aluno\n");
+                printf(" 2 - Listar Aluno\n");
+                printf(" 3 - Atualizar Aluno\n");
+                printf(" 4-  Escluir Aluno\n"); 
+                scanf(%d,&opcaoAluno);
 
             switch (opcaoAluno){
                 case 0:{
