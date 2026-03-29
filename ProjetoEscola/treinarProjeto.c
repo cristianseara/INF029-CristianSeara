@@ -45,6 +45,19 @@ int main(){
                     }
                     case 1:{
                         printf(" Cadastrar Aluno\n");
+                        printf("Digite a matricla\n");
+                        int matricla;
+                        scanf("%d, &matricla");
+                            if("matricla < 0"){
+                                printf("matricla invalida\n"){
+                            }else{
+                                if(qtdAluno == TAM_ALUNO){
+                                    printf("Listar de Alunos de cheia\n")
+                                }else{
+                                 listarAluno[qtdAluno] = matricla;
+                                 qtdAluno++;
+                            }
+                        }
                         break;
                     }
                     case 2:{
