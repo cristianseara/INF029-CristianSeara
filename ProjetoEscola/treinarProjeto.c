@@ -65,8 +65,10 @@ int main()
                 }
                 case 2:{
                 printf(" Listar Aluno\n");
-                for(int i = 0; i < TAM_ALUNO; i++);
-                
+                for(int i = 0; i < TAM_ALUNO; i++)
+                {
+                    printf("matricula: %d\n", listaAluno[i]);
+                }
                 break;    
                 }
                 case 3:{
