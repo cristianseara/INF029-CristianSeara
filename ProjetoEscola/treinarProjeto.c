@@ -16,7 +16,7 @@ int main()
     printf(" 0 - Sair\n");
     printf(" 1 - Aluno\n");
     printf(" 2 - Professor\n");
-    printf(" 3 - Dsiciplina\n");
+    printf(" 3 - Disciplina\n");
     
     scanf("%d", &opcao);
     
@@ -49,7 +49,7 @@ int main()
                 case 1:{
                 printf(" Cadastrar Aluno\n");
                     int matricula;
-                    printf("Digite a matriucla\n");
+                    printf("Digite a matricula\n");
                     scanf("%d",&matricula);
                     if(matricula < 0){
                         printf("matricula invalido\n");
@@ -92,7 +92,7 @@ int main()
         break;
         }
         case 3:{
-            printf("Modulo Dsiciplina\n");
+            printf("Modulo Disciplina\n");
         break;
         }
         default:{
