@@ -47,26 +47,30 @@ int main()
                         }
                         case 1:{
                             printf(" Cadastrar Aluno\n");
-                            int matricula;
-                            printf("Digite a matricula\n");
-                            scanf("%d",&matricula);
-                            if(matricula < 0){
-                                printf("matricula invalido\n");
-                            }else{
-                                if(qtdAluno == TAM_ALUNO){
+                            if(qtdAluno == TAM_ALUNO){
                                 printf("Listar de alunos cheia\n");
                                 }else{
+                                    printf("Digite a matricula\n");
+                                int matricula;
+                                scanf("%d",&matricula);
+                                if(matricula < 0){
+                                    printf("matricula invalido\n");
+                                }
                                     listaAluno [qtdAluno] = matricula;
                                     qtdAluno ++;
+                                    printf("Cadastrar com sucesso\n");
                                 }
-                            }
                             break;    
                         }
                         case 2:{
                             printf(" Listar Aluno\n");
-                            for(int i = 0; i < TAM_ALUNO; i++)
-                            {
-                                printf("matricula: %d\n", listaAluno[i]);
+                            if(qtdAluno == 0 ){
+                                printf("Lista aluno vazia\n");
+                            }else{
+                            for(int i = 0; i < qtdAluno; i++)
+                                {
+                                    printf("matricula: %d\n", listaAluno[i]);
+                                }    
                             }
                             break;    
                         }
@@ -104,7 +108,6 @@ int main()
     
     return 0;
 }
-
 
 
 
