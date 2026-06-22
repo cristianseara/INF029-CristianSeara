@@ -30,7 +30,7 @@ int main()
                 int sairAluno = 0;
                 int opcaoAluno;
                 
-                while(!sair){
+                while(!sairAluno){
                 
                     printf(" 0 - Voltar\n");
                     printf(" 1 - Cadastrar Aluno\n");
@@ -42,34 +42,39 @@ int main()
                     
                     switch(opcaoAluno){
                         case 0:{
-                            sairAluno = 0;
+                            sairAluno = 1;
                             break;    
                         }
                         case 1:{
-                            printf(" Cadastrar Aluno\n");
-                            if(qtdAluno == TAM_ALUNO){
-                                printf("Listar de alunos cheia\n");
-                                }else{
-                                    printf("Digite a matricula\n");
-                                int matricula;
-                                scanf("%d",&matricula);
-                                if(matricula < 0){
-                                    printf("matricula invalido\n");
-                                }
-                                    listaAluno [qtdAluno] = matricula;
-                                    qtdAluno ++;
-                                    printf("Cadastrar com sucesso\n");
-                                }
-                            break;    
+                        printf("Cadastrar Aluno\n");
+                    
+                        if(qtdAluno == TAM_ALUNO){
+                            printf("Lista de alunos cheia\n");
+                        }else{
+                            printf("Digite a matricula\n");
+                    
+                            int matricula;
+                            scanf("%d", &matricula);
+                    
+                            if(matricula < 0){
+                                printf("Matricula invalida\n");
+                            }else{
+                                listaAluno[qtdAluno] = matricula;
+                                qtdAluno++;
+                                printf("Cadastrado com sucesso\n");
+                            }
+                        }
+
+                            break;
                         }
                         case 2:{
                             printf(" Listar Aluno\n");
                             if(qtdAluno == 0 ){
-                                printf("Lista aluno vazia\n");
+                                printf("Lista de alunos vazia\n");
                             }else{
                             for(int i = 0; i < qtdAluno; i++)
                                 {
-                                    printf("matricula: %d\n", listaAluno[i]);
+                                    printf("Matricula: %d\n", listaAluno[i]);
                                 }    
                             }
                             break;    
@@ -108,6 +113,5 @@ int main()
     
     return 0;
 }
-
 
 
