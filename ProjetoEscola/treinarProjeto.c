@@ -1,10 +1,18 @@
 #include <stdio.h>
 #define TAM_ALUNO 3
 
+
+    typedef struct alu{
+        
+    int matricula;
+    char sexo;
+    int ativo;
+}aluno;
+
 int main()
 {
+    aluno listaAluno[TAM_ALUNO];
     int sair = 0;
-    int listaAluno[TAM_ALUNO];
     int qtdAluno = 0;
     int opcao; 
     
@@ -47,35 +55,36 @@ int main()
                         }
                         case 1:{
                         printf("Cadastrar Aluno\n");
-                    
-                        if(qtdAluno == TAM_ALUNO){
-                            printf("Lista de alunos cheia\n");
-                        }else{
-                            printf("Digite a matricula\n");
-                    
-                            int matricula;
-                            scanf("%d", &matricula);
-                    
-                            if(matricula < 0){
-                                printf("Matricula invalida\n");
+                            if(qtdAluno == TAM_ALUNO){
+                                printf("Lista alunos de cheia\n");
                             }else{
-                                listaAluno[qtdAluno] = matricula;
-                                qtdAluno++;
-                                printf("Cadastrado com sucesso\n");
+                                printf("Digite a matricula\n");
+                                
+                                int matricula;
+                                scanf("%d",&matricula);
+                                
+                                if(matricula < 0 ){
+                                    printf("matricula invalido\n");
+                                }else{
+                                    listaAluno [qtdAluno].matricula = matricula;
+                                    listaAluno [qtdAluno].ativo = 1;
+                                    qtdAluno++;
+                                    printf("Cadastrar com sucesso\n");
                             }
                         }
+                        
 
                             break;
                         }
                         case 2:{
                             printf(" Listar Aluno\n");
-                            if(qtdAluno == 0 ){
-                                printf("Lista de alunos vazia\n");
+                            if(qtdAluno == 0){
+                                printf("Lista alunos de vazia\n");
                             }else{
-                            for(int i = 0; i < qtdAluno; i++)
+                                for(int i = 0; i < qtdAluno; i++)
                                 {
-                                    printf("Matricula: %d\n", listaAluno[i]);
-                                }    
+                                    printf("matricula: %d\n", listaAluno[i].matricula);
+                                } 
                             }
                             break;    
                         }
@@ -113,5 +122,4 @@ int main()
     
     return 0;
 }
-
 
