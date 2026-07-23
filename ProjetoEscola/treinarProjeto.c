@@ -1,17 +1,19 @@
 #include <stdio.h>
 #define TAM_ALUNO 3
 
-
-    typedef struct alu{
-        
+typedef struct alu{
+    
     int matricula;
-    char sexo;
+    char sexo; 
     int ativo;
-}aluno;
 
-int main()
-{
-    aluno listaAluno[TAM_ALUNO];
+}Aluno;
+
+
+int main (){
+    
+    
+    Aluno listaAluno[TAM_ALUNO];
     int sair = 0;
     int qtdAluno = 0;
     int opcao; 
@@ -56,35 +58,37 @@ int main()
                         case 1:{
                         printf("Cadastrar Aluno\n");
                             if(qtdAluno == TAM_ALUNO){
-                                printf("Lista alunos de cheia\n");
+                                printf("Listar alunos de cheia\n");
                             }else{
                                 printf("Digite a matricula\n");
                                 
                                 int matricula;
-                                scanf("%d",&matricula);
+                                scanf("%d", &matricula);
                                 
-                                if(matricula < 0 ){
-                                    printf("matricula invalido\n");
+                                if(matricula < 0){
+                                    printf("Matricula invalido\n");
                                 }else{
                                     listaAluno [qtdAluno].matricula = matricula;
                                     listaAluno [qtdAluno].ativo = 1;
                                     qtdAluno++;
                                     printf("Cadastrar com sucesso\n");
+                                }
+                                
                             }
-                        }
                         
-
                             break;
                         }
                         case 2:{
                             printf(" Listar Aluno\n");
                             if(qtdAluno == 0){
-                                printf("Lista alunos de vazia\n");
+                                printf("Listar alunos de vaiza\n");
                             }else{
                                 for(int i = 0; i < qtdAluno; i++)
                                 {
-                                    printf("matricula: %d\n", listaAluno[i].matricula);
-                                } 
+                                if(listaAluno[i].ativo == 1);
+                                printf("Matricula: %d\n", listaAluno[i].matricula);
+                            
+                                }    
                             }
                             break;    
                         }
@@ -94,6 +98,35 @@ int main()
                         }
                         case 4:{
                             printf(" Excluir Aluno\n");
+                            printf("Digite a matricula\n");
+                                
+                                int matricula;
+                                scanf("%d", &matricula);
+                                int achou  = 0;
+                                if(matricula < 0){
+                                    printf("Matricula invalido\n");
+                                }else{
+                                  for(int i = 0; i < qtdAluno; i++)
+                                  {
+                                if(matricula == listaAluno[i].matricula){
+                                    listaAluno[i].ativo = -1;
+                                    qtdAluno --;
+                                    for(int j = i; j < qtdAluno - 1; j++)
+                                    {
+                                        listaAluno[j].matricula = listaAluno[j+1].matricula;
+                                        listaAluno[j].sexo = listaAluno[j+1].sexo;
+                                        listaAluno[j].ativo = listaAluno[j+1].ativo;
+                                    }
+                                    achou = 1;
+                                    break;
+                                        }
+                                    }
+                                    if(achou){
+                                        printf("Aluno Excluido com sucesso\n");
+                                    }else{
+                                        printf("Aluno inexistente\n");
+                                    }  
+                                }
                             break;    
                         }
                         default:{
@@ -122,4 +155,3 @@ int main()
     
     return 0;
 }
-
