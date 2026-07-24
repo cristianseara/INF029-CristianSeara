@@ -94,12 +94,35 @@ int main (){
                         }
                         case 3:{
                             printf(" Atualizar Aluno\n");
+                            printf("Digite a matricula\n");
+                                int matricula;
+                                scanf("%d", &matricula);
+                                int achou  = 0;
+                                if(matricula < 0){
+                                    printf("Matricula invalido\n");
+                                }else{
+                                  for(int i = 0; i < qtdAluno; i++)
+                                  {
+                                if(matricula == listaAluno[i].matricula && listaAluno[i].ativo){
+                                    printf("Digite a nova matricula\n");
+                                    int novamatricula;
+                                    scanf("%d", &novamatricula);
+                                    listaAluno[i].matricula = novamatricula;
+                                    achou = 1;
+                                    break;
+                                        }
+                                    }
+                                    if(achou){
+                                        printf("Aluno atualizado com sucesso\n");
+                                    }else{
+                                        printf("Aluno inexistente\n");
+                                    }  
+                                }
                             break;    
                         }
                         case 4:{
                             printf(" Excluir Aluno\n");
                             printf("Digite a matricula\n");
-                                
                                 int matricula;
                                 scanf("%d", &matricula);
                                 int achou  = 0;
@@ -110,13 +133,15 @@ int main (){
                                   {
                                 if(matricula == listaAluno[i].matricula){
                                     listaAluno[i].ativo = -1;
-                                    qtdAluno --;
+                                    
                                     for(int j = i; j < qtdAluno - 1; j++)
                                     {
                                         listaAluno[j].matricula = listaAluno[j+1].matricula;
                                         listaAluno[j].sexo = listaAluno[j+1].sexo;
                                         listaAluno[j].ativo = listaAluno[j+1].ativo;
                                     }
+                                    
+                                    qtdAluno --;
                                     achou = 1;
                                     break;
                                         }
