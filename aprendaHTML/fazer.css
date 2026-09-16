@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Título */
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    font-weight: normal;
+}
+
+/* Demais textos */
+p,
+label,
+span,
+div {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Botão Macro */
+#macro,
+.btn-macro,
+button {
+    background-color: blue;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse */
+#macro:hover,
+.btn-macro:hover,
+button:hover {
+    background-color: #0056b3;
+}
